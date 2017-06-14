@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# misc
+alias o.='open .'
+alias ..='cd ..'
+
+# koshu
+alias koshu='./koshu.sh'
+
+# kubernetes
+alias minime='minikube start; eval $(minikube docker-env); kubectl config use-context minikube;'
+alias k8s='kubectl'
+
+# docker
+alias dc='docker-compose'
+alias dm='docker-machine'
+alias dpsrma='docker rm -f $(docker ps -a -q)'
+alias dirmd='docker rmi $(docker images -q -f dangling=true)'
+alias dvrma='docker volume rm $(docker volume ls -q)'
+alias dvrmd='docker volume rm $(docker volume ls -q -f dangling=true)'
+
+# git
+alias cs='clear ; git status'
+alias diff='git difftool'
+alias merge='git mergetool'
+alias gco='git commit'
+alias gg='git gui'
+alias gl='git log'
