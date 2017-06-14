@@ -1,0 +1,10 @@
+# OS junk files
+.DS_Store
+[Tt]humbs.db
+
+# Dotnet
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+
+# Tooling
