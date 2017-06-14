@@ -1,3 +1,9 @@
+[github]
+	user = kristofferahl
+	name = Kristoffer Ahl
+[user]
+	email = git@77dynamite.com
+	name = Kristoffer Ahl
 [core]
 	editor = "atom --wait --new-window"
 [alias]
