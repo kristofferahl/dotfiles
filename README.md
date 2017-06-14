@@ -1,1 +1,1 @@
-# dotfiles
+# Dotfiles and setup scripts
