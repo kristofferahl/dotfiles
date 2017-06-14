@@ -1,0 +1,12 @@
+[core]
+	editor = "atom --wait --new-window"
+[alias]
+	lga = log --graph --oneline --decorate
+	lgd = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[gui]
+	fontdiff = -family Menlo -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+	fontui = -family Menlo -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+[merge]
+	tool = bc3
+[mergetool]
+	bc3 = trustExitCode
