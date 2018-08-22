@@ -3,13 +3,10 @@
 # misc
 alias o.='open .'
 alias ..='cd ..'
+alias ls='ls -lah --color --group-directories-first'
 
 # koshu
 alias koshu='./koshu.sh'
-
-# kubernetes
-alias minime='minikube start; eval $(minikube docker-env); kubectl config use-context minikube;'
-alias k8s='kubectl'
 
 # docker
 alias dc='docker-compose'
