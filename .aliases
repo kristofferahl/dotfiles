@@ -1,25 +1,30 @@
 #!/usr/bin/env bash
 
 # misc
-alias o.='open .'
+alias cdev='cd ~/develop'
 alias ..='cd ..'
-alias ls='ls -lah --color --group-directories-first'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='../../../..'
+alias ......='../../../../..'
+alias ls='ls -ahl --color --group-directories-first'
 
-# koshu
+# dotslash
 alias koshu='./koshu.sh'
+alias devops='./devops'
+alias stack='./stack'
 
 # docker
 alias dc='docker-compose'
-alias dm='docker-machine'
-alias dpsrma='docker rm -f $(docker ps -a -q)'
-alias dirmd='docker rmi $(docker images -q -f dangling=true)'
-alias dvrma='docker volume rm $(docker volume ls -q)'
-alias dvrmd='docker volume rm $(docker volume ls -q -f dangling=true)'
+alias docker-rma='docker rm -f $(docker ps -a -q)'
+
+# kubernetes
+alias k=kubectl
 
 # git
 alias cs='clear ; git status'
-alias diff='git difftool'
-alias merge='git mergetool'
 alias gco='git commit'
 alias gg='git gui'
 alias gl='git log'
+alias diff='git diff | git-split-diffs --color | less -RFX'
+alias merge='git mergetool'
