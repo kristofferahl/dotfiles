@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# auto cd
+setopt AUTO_CD

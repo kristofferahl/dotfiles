@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Bash
+#[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+#[[ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.zsh" ]] && . $(brew --prefix)/etc/bash_completion.d/git-completion.zsh
+
+# Zsh
+autoload -Uz compinit && compinit
+
+# fzf
+# $(brew --prefix)/opt/fzf/install
+source ~/.fzf.zsh
+
+# zsh-autosuggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# kubectl
+source <(kubectl completion zsh)

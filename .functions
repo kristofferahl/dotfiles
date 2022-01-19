@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+function github() {
+  local action="${1}"
+  local remote='origin'
+  local address
+  local branch
+  local url="https://github.com"
+  if [[ ! -d .git ]]; then
+    echo "Not a github repository..."
+  else
+    address="$(git remote -v | sed -rn "s/^${remote}(.*)\.git \(fetch\)$/\1/p" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+    branch="$(git rev-parse --abbrev-ref HEAD)"
+    url="${url:?}/$(echo "$address" | sed -rn 's/^git@github.com:(.*)$/\1/p')"
+    if [[ "${branch:?}" != 'master' ]]; then
+      case "${action}" in
+        pr) url="${url:?}/pull/new/${branch:?}" ;;
+        *) url="${url:?}/tree/${branch:?}" ;;
+      esac
+    fi
+  fi
+  echo "Opening ${url}"
+  open "${url}"
+}
+
+function watchit() {
+  local timespan=${1:?}
+  shift
+
+  while true; do
+    clear
+    echo "Every ${timespan:?}s: ${*}"
+    echo
+    "${@}"
+    sleep "${timespan:?}"
+  done
+}

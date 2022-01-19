@@ -1,1 +1,25 @@
+#!/usr/bin/env bash
 
+# paths
+PATH="/opt/homebrew/bin:$PATH"
+# PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# PATH="/usr/local/kubebuilder/bin:$PATH"
+# PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# go paths
+export GOPATH="$HOME/develop/go"
+export PATH="$GOPATH/bin:$PATH"
+
+# starship
+export STARSHIP_CONFIG=~/develop/dotfiles/.config/starship.toml
+
+# fd
+export FD_OPTIONS=''
+
+# fzf
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort' --bind='ctrl-p:toggle-preview' --preview '[[ \$(file --mime {}) =~ binary ]] && echo Preview not available for {} || (bat --style=numbers --color=always --line-range :500 {} || cat {}) 2>/dev/null' --preview-window hidden"
+export FZF_DEFAULT_COMMAND="fd $FD_OPTIONS"
+export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
+# export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}' --preview-window hidden"
+export FZF_ALT_C_COMMAND="fd --type d --hidden $FD_OPTIONS"
+export FZF_ALT_C_OPTS="--preview 'tree -L 3 -C {} | head -50' --preview-window nohidden"

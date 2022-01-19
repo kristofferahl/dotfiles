@@ -2,18 +2,25 @@
 	user = kristofferahl
 	name = Kristoffer Ahl
 [user]
-	email = git@77dynamite.com
+	email = mail@77dynamite.com
 	name = Kristoffer Ahl
+	signingkey = <SIGNINGKEY_GOES_HERE>
 [core]
-	editor = "atom --safe --wait --new-window"
+	#editor = "atom --safe --wait --new-window"
 [alias]
-  clear-branches = "!git branch --merged master | grep -v master | xargs git branch -d"
+	clear-branches = "!git branch --merged master | grep -v master | xargs git branch -d"
 	lga = log --graph --oneline --decorate
 	lgd = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [gui]
 	fontdiff = -family Menlo -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 	fontui = -family Menlo -size 12 -weight normal -slant roman -underline 0 -overstrike 0
 [merge]
-	tool = bc3
-[mergetool]
-	bc3 = trustExitCode
+	tool = bc4
+[mergetool "bc4"]
+	trustExitCode = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[commit]
+	gpgsign = true
+[tag]
+	forceSignAnnotated = true
