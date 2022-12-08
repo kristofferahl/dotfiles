@@ -2,9 +2,7 @@
 
 # paths
 PATH="/opt/homebrew/bin:$PATH"
-# PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-# PATH="/usr/local/kubebuilder/bin:$PATH"
-# PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+PATH="${PATH}:${HOME}/.krew/bin"
 
 # go paths
 export GOPATH="$HOME/develop/go"
