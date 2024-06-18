@@ -6,12 +6,6 @@ echo
 echo '## watching a command'
 echo '     watchit 2 kubectl get pods'
 echo
-echo '## curl file from s3 using aws cli'
-echo '     aws s3 cp s3://tm-secrets/tm-build-tools.json -'
-echo
-echo '## get ec2 instance info from within an instance'
-echo '     ec2metadata --instance-id'
-echo
 echo '## digging'
 echo '     dig +short google.com'
 echo '     dig +trace google.com'
@@ -21,11 +15,8 @@ echo
 echo '## checking certificates'
 echo '     openssl s_client -connect foo.bar.com:443 -showcerts'
 echo
-echo '## ammending a commit'
-echo '     git commit --amend --no-edit'
-echo
-echo '## force move a pod'
-echo '     kubectl cordon <node> && kubectl delete pod <pod> && kubectl uncordon <node>'
-echo
-echo '## view kubernetes events'
-echo '     kubectl get events'
+# echo '## force move a pod'
+# echo '     kubectl cordon <node> && kubectl delete pod <pod> && kubectl uncordon <node>'
+# echo
+# echo '## view kubernetes events'
+# echo '     kubectl get events'
