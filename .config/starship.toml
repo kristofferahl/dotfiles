@@ -5,7 +5,8 @@ disabled = true
 
 [time]
 disabled = false
-format = '🕙 $time($style) '
+format = ' 🕙 $time($style) '
+time_format = 'W%U, %a %T'
 
 [[battery.display]]
 threshold = 20
