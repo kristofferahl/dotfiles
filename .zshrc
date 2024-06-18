@@ -8,3 +8,10 @@ source ~/develop/dotfiles/.temp
 
 eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
+
+if [[ -d ~/develop/dotfiles/addons/ ]]; then
+  for filename in ~/develop/dotfiles/addons/.*; do
+    echo "sourcing dotfiles addon ${filename:?}..."
+    source "${filename:?}"
+  done
+fi
