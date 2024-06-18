@@ -12,10 +12,10 @@ function github() {
     address="$(git remote -v | sed -rn "s/^${remote}(.*)\.git \(fetch\)$/\1/p" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
     branch="$(git rev-parse --abbrev-ref HEAD)"
     url="${url:?}/$(echo "$address" | sed -rn 's/^git@github.com:(.*)$/\1/p')"
-    if [[ "${branch:?}" != 'master' ]]; then
+    if [[ "${branch:?}" != 'main' && "${branch:?}" != 'master' ]]; then
       case "${action}" in
-        pr) url="${url:?}/pull/new/${branch:?}" ;;
-        *) url="${url:?}/tree/${branch:?}" ;;
+      pr) url="${url:?}/pull/new/${branch:?}" ;;
+      *) url="${url:?}/tree/${branch:?}" ;;
       esac
     fi
   fi
