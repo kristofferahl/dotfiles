@@ -9,7 +9,7 @@ export GOPATH="$HOME/develop/go"
 export PATH="$GOPATH/bin:$PATH"
 
 # starship
-export STARSHIP_CONFIG=~/develop/dotfiles/.config/starship.toml
+export STARSHIP_CONFIG="${DOTFILES_DIR:?}/.config/starship.toml"
 
 # fd
 export FD_OPTIONS=''
