@@ -3,6 +3,8 @@
 # tip of the day
 echo '# Tip of the day'
 echo
+echo "Don't be an ass!"
+echo
 echo '## watching a command'
 echo '     watchit 2 kubectl get pods'
 echo
