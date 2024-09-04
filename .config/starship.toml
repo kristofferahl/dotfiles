@@ -16,7 +16,7 @@ disabled = false
 format = '[ ⎈ $context ](inverted blue) in '
 
 [aws]
-disabled = false
+disabled = true
 
 [status]
 disabled = false
