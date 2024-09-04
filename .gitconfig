@@ -10,7 +10,7 @@
 [core]
 	autocrlf = input
 [alias]
-	clear-branches = "!git branch --merged master | grep -v master | xargs git branch -d"
+	clear-branches = "!git branch --merged main | grep -v main | xargs git branch -d"
 	lga = log --graph --oneline --decorate
 	lgd = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [gui]
