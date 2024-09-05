@@ -1,4 +1,6 @@
 export DOTFILES_DIR=~/develop/dotfiles
+echo "sourcing dotfiles from ${DOTFILES_DIR:?}"
+echo
 
 source ${DOTFILES_DIR:?}/.options
 source ${DOTFILES_DIR:?}/.exports
@@ -13,7 +15,7 @@ eval "$(direnv hook zsh)"
 
 if [[ -d ${DOTFILES_DIR:?}/addons/ ]]; then
   for filename in ${DOTFILES_DIR:?}/addons/.*; do
-    echo "sourcing dotfiles addon ${filename:?}..."
+    echo "sourcing dotfiles addon ${filename:?}"
     source "${filename:?}"
   done
 fi
