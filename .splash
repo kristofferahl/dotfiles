@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+echo
+echo
+fastfetch
+
+# tip of the day
+gum style --foreground=212 --margin="1 0" --bold 'Remember, remember the commands of November!'
+
+gum style --margin="0 0" --padding="0 2" --bold 'watching a command'
+gum style --margin="0 0 1 0" --padding="0 4" 'viddy -n 2 kubectl get pods'
+
+gum style --margin="0 0" --padding="0 2" --bold 'digging'
+gum style --margin="0 0 1 0" --padding="0 4" 'dig +short google.com' \
+          'dig +trace google.com' \
+          'dig @1.1.1.1 google.com' \
+          'dig +tcp google.com'
+
