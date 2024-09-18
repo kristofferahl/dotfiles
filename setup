@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# setup hook for .zshrc
+if grep 'DOTFILES_DIR' &>/dev/null <~/.zshrc; then
+  echo "dotfile already setup in ~/.zshrc"
+  exit 0
+fi
+declare here
+here="$( cd "$( dirname "$0" )" && pwd )"
+cat <<EOF >> ~/.zshrc
+export DOTFILES_DIR="${here:?}"
+source "\${DOTFILES_DIR:?}/.zshrc"
+EOF
