@@ -7,7 +7,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='../../../..'
 alias ......='../../../../..'
-alias ls='ls -ahl -G'
+
+# replacement commands
+alias ls='eza --icons -ahl'
+alias cat='bat --paging=never'
 
 # dotslash
 alias koshu='./koshu.sh'
