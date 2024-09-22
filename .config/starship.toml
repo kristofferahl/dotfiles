@@ -18,5 +18,9 @@ format = '[ ⎈ $context ](inverted blue) in '
 [aws]
 disabled = true
 
+# [custom.aws_credentials]
+# command = "source /Users/kristofferahl/develop/dotfiles/.config/starship-aws.sh"
+# when = 'true'
+
 [status]
 disabled = false
