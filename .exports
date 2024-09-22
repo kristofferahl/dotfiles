@@ -11,6 +11,9 @@ export PATH="$GOPATH/bin:$PATH"
 # starship
 export STARSHIP_CONFIG="${DOTFILES_DIR:?}/.config/starship.toml"
 
+# zellij
+export ZELLIJ_CONFIG_DIR="${DOTFILES_DIR:?}/.config/zellij"
+
 # fd
 export FD_OPTIONS=''
 
