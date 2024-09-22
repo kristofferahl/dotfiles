@@ -24,6 +24,7 @@ alias k=kubectl
 # git
 alias cs='clear ; git status'
 alias gco='git commit'
+alias gcc='git cz'
 alias gg='git gui'
 alias gl='git log'
 alias diff='git diff | git-split-diffs --color | less -RFX'
