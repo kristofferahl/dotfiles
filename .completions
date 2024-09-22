@@ -4,6 +4,9 @@
 #[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 #[[ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.zsh" ]] && . $(brew --prefix)/etc/bash_completion.d/git-completion.zsh
 
+# brew completions
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
 # Zsh
 autoload -Uz compinit && compinit
 
