@@ -23,15 +23,36 @@ function github() {
   open "${url}"
 }
 
-function watchit() {
-  local timespan=${1:?}
-  shift
+function aws-dotenv-credenitals() {
+  [[ "${AWS_REGION:-}" != '' ]] && echo "AWS_REGION=${AWS_REGION:?}"
+  echo "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID:?}"
+  echo "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:?}"
+  [[ "${AWS_SESSION_TOKEN:-}" != '' ]] && echo "AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN:?}"
+}
 
-  while true; do
-    clear
-    echo "Every ${timespan:?}s: ${*}"
-    echo
-    "${@}"
-    sleep "${timespan:?}"
-  done
+function aws-s3-permanently-delete() {
+  local bucket="${1:?'A bucket name is required'}"
+  local prefix="${2:?'A prefix is required'}"
+  local yes="${3:-'n'}"
+  local json
+  local item_count=0
+
+  json="$(aws s3api list-object-versions --bucket "${bucket:?}" --prefix "${prefix:?}" | jq '{Objects: [((.Versions // []) + (.DeleteMarkers // []))[] | {Key:.Key, VersionId : .VersionId}], Quiet: false}')"
+  if [[ "${json:-}" != '' ]]; then
+    item_count="$(echo "${json}" | jq '.Objects | length')"
+  fi
+
+  if [[ "${yes:-}" == '-y' ]]; then
+    echo "Deleting all versions of ${item_count:?} object(s) in s3://${bucket:?}/${prefix:?}..."
+    yn='yes'
+  else
+    echo -n "Delete all versions of ${item_count:?} object(s) in s3://${bucket:?}/${prefix:?} (yes/no)? "
+    read -r yn
+  fi
+
+  if [[ ${item_count:?} != 0 && "${yn:-'no'}" == 'yes' ]]; then
+    aws s3api delete-objects \
+      --bucket "${bucket:?}" \
+      --delete "${json:?}"
+  fi
 }
