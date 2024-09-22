@@ -15,12 +15,12 @@ export STARSHIP_CONFIG="${DOTFILES_DIR:?}/.config/starship.toml"
 export ZELLIJ_CONFIG_DIR="${DOTFILES_DIR:?}/.config/zellij"
 
 # fd
-export FD_OPTIONS=''
+export FD_OPTIONS='--exclude .git/'
 
 # fzf
-export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort' --bind='ctrl-p:toggle-preview' --preview '[[ \$(file --mime {}) =~ binary ]] && echo Preview not available for {} || (bat --style=numbers --color=always --line-range :500 {} || cat {}) 2>/dev/null' --preview-window hidden"
 export FZF_DEFAULT_COMMAND="fd $FD_OPTIONS"
+export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code {})+abort' --bind='ctrl-p:toggle-preview' --preview '[[ \$(file --mime {}) =~ binary ]] && echo Preview not available for {} || (bat --style=numbers --color=always --line-range :500 {} || cat {}) 2>/dev/null' --preview-window hidden"
 export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
-# export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}' --preview-window hidden"
+export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}' --preview-window hidden"
 export FZF_ALT_C_COMMAND="fd --type d --hidden $FD_OPTIONS"
-export FZF_ALT_C_OPTS="--preview 'tree -L 3 -C {} | head -50' --preview-window nohidden"
+export FZF_ALT_C_OPTS="--preview 'eza --tree -L 3 --classify=always --color=always {}' --preview-window nohidden"
