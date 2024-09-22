@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+set -euo pipefail
+
+# ensure addons dir is present
+mkdir addons || true
 
 # setup hook for .zshrc
 if grep 'DOTFILES_DIR' &>/dev/null <~/.zshrc; then

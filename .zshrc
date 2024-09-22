@@ -6,7 +6,6 @@ source ${DOTFILES_DIR:?}/.exports
 source ${DOTFILES_DIR:?}/.aliases
 source ${DOTFILES_DIR:?}/.completions
 source ${DOTFILES_DIR:?}/.functions
-source ${DOTFILES_DIR:?}/.temp
 
 if [[ -d ${DOTFILES_DIR:?}/addons/ ]]; then
   for filename in ${DOTFILES_DIR:?}/addons/.*; do
