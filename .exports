@@ -24,3 +24,6 @@ export FZF_CTRL_T_COMMAND="fd $FD_OPTIONS"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}' --preview-window hidden"
 export FZF_ALT_C_COMMAND="fd --type d --hidden $FD_OPTIONS"
 export FZF_ALT_C_OPTS="--preview 'eza --tree -L 3 --classify=always --color=always {}' --preview-window nohidden"
+
+# gpg
+export GPG_TTY=$(tty)
