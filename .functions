@@ -14,8 +14,8 @@ function github() {
     url="${url:?}/$(echo "$address" | sed -rn 's/^git@github.com:(.*)$/\1/p')"
     if [[ "${branch:?}" != 'main' && "${branch:?}" != 'master' ]]; then
       case "${action}" in
-      pr) url="${url:?}/pull/new/${branch:?}" ;;
-      *) url="${url:?}/tree/${branch:?}" ;;
+        pr) url="${url:?}/pull/new/${branch:?}" ;;
+        *) url="${url:?}/tree/${branch:?}" ;;
       esac
     fi
   fi
@@ -54,5 +54,16 @@ function aws-s3-permanently-delete() {
     aws s3api delete-objects \
       --bucket "${bucket:?}" \
       --delete "${json:?}"
+  fi
+}
+
+function zel() {
+  local session_name="${1:?}"
+  if zellij list-sessions -s 2>/dev/null | grep -wE "${session_name:?}"; then
+    echo "Session ${session_name:?} already exists, attaching..."
+    zellij attach "${session_name:?}"
+  else
+    echo "Creating new session ${session_name:?}..."
+    zellij -n "$HOME/develop/github/dotfiles/.config/zellij/layouts/${session_name:?}.kdl" -s "${session_name:?}"
   fi
 }

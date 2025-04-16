@@ -14,7 +14,8 @@ autoload -Uz compinit && compinit
 source <(fzf --zsh)
 
 # zsh-autosuggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+export KEYTIMEOUT=25
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # kubectl
 source <(kubectl completion zsh)

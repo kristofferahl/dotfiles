@@ -1,0 +1,60 @@
+theme: charm
+template: |4-
+    {{type}}{{scope}}{{breaking_glyph}}: {{description}}
+
+    {{breaking_body}}{{body}}
+fields:
+    - type: select
+      title: type of commit
+      required: false
+      default: feat
+      format:
+        - key: type
+          format: '{{value}}'
+      options:
+        - key: feat
+          value: feat
+        - key: fix
+          value: fix
+        - key: chore
+          value: chore
+    - type: input
+      title: scope of the commit
+      description: noun describing a section of the codebase
+      required: false
+      placeholder: e.g. api, ui, app etc.
+      format:
+        - key: scope
+          format: ({{value}})
+    - type: input
+      title: summary of the change
+      description: a short description of the change
+      required: true
+      placeholder: e.g. add config file
+      format:
+        - key: description
+          format: '{{value}}'
+    - type: confirm
+      title: breaking change?
+      description: if yes, describe the breaking change in detail
+      required: false
+      format:
+        - key: breaking_glyph
+          format: '!'
+          when: "true"
+        - key: breaking_glyph
+          format: ""
+          when: "false"
+        - key: breaking_body
+          format: 'BREAKING CHANGE: '
+          when: "true"
+        - key: breaking_body
+          format: ""
+          when: "false"
+    - type: text
+      title: describe the change in detail (optional)
+      description: what is the motivation for this change
+      required: false
+      format:
+        - key: body
+          format: '{{value}}'

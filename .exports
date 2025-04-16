@@ -6,7 +6,8 @@ PATH="${PATH}:${HOME}/.krew/bin"
 
 # go paths
 export GOPATH="$HOME/develop/go"
-export PATH="$GOPATH/bin:$PATH"
+export GOBIN="${GOPATH:?}/bin"
+export PATH="${GOBIN:?}/bin:${PATH:?}"
 
 # starship
 export STARSHIP_CONFIG="${DOTFILES_DIR:?}/.config/starship.toml"
