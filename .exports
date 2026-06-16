@@ -7,7 +7,7 @@ PATH="${PATH}:${HOME}/.krew/bin"
 # go paths
 export GOPATH="$HOME/develop/go"
 export GOBIN="${GOPATH:?}/bin"
-export PATH="${GOBIN:?}/bin:${PATH:?}"
+export PATH="${GOBIN:?}:${PATH:?}"
 
 # starship
 export STARSHIP_CONFIG="${DOTFILES_DIR:?}/.config/starship.toml"
@@ -28,3 +28,6 @@ export FZF_ALT_C_OPTS="--preview 'eza --tree -L 3 --classify=always --color=alwa
 
 # gpg
 export GPG_TTY=$(tty)
+
+# default editor
+export EDITOR="nvim"
