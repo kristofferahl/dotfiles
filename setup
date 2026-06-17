@@ -1,6 +1,86 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+brew install aws-iam-authenticator
+brew install awscli
+brew install bash
+brew install bash-completion@2
+brew install bat
+brew install bats-core
+brew install btop
+brew install ca-certificates
+brew install charmbracelet/tap/freeze
+brew install coreutils
+brew install cryptography
+brew install deno
+brew install direnv
+brew install docker-credential-helper-ecr
+brew install eza
+brew install fastfetch
+brew install fd
+brew install fzf
+brew install gettext
+brew install gh
+brew install git
+brew install git-gui
+brew install glow
+brew install go
+brew install go-bindata
+brew install golangci-lint
+brew install goreleaser
+brew install gopass
+brew install gum
+brew install helm
+brew install hey
+brew install jira-cli
+brew install jo
+brew install jq
+brew install kind
+brew install ko
+brew install krew
+brew install kube-score
+brew install kubebuilder
+brew install kubectx
+brew install kubernetes-cli
+brew install kustomize
+brew install neovim
+brew install operator-sdk
+brew install pinentry
+brew install pinentry-mac
+brew install shellcheck
+brew install shfmt
+brew install sops
+brew install starship
+brew install staticcheck
+brew install tailscale
+brew install tenv
+brew install terminal-notifier
+brew install terraform
+brew install tflint
+brew install tfsec
+brew install vhs
+brew install viddy
+brew install wget
+brew install worktrunk
+brew install yq
+brew install zellij
+brew install zsh-autosuggestions
+brew install johanhaleby/kubetail/kubetail
+brew install ynqa/tap/jnv
+brew install font-roboto-mono-nerd-font
+brew install cue-lang/tap/cue
+brew install dotnetmentor/tap/cidrgrep
+brew install dotnetmentor/tap/rq
+brew install dotnetmentor/tap/trail-digger
+brew install iann0036/iamlive/iamlive
+brew install gromgit/brewtils/taproom
+brew install kristofferahl/tap/mavis
+brew install oocx/tfplan2md/tfplan2md
+brew install peonping/tap/peon-ping
+brew install iterm2
+brew install ghostty
+brew install kiro-cli
+
 # ensure addons dir is present
 mkdir addons || true
 
@@ -10,8 +90,8 @@ if grep 'DOTFILES_DIR' &>/dev/null <~/.zshrc; then
   exit 0
 fi
 declare here
-here="$( cd "$( dirname "$0" )" && pwd )"
-cat <<EOF >> ~/.zshrc
+here="$(cd "$(dirname "$0")" && pwd)"
+cat <<EOF >>~/.zshrc
 export DOTFILES_DIR="${here:?}"
 source "\${DOTFILES_DIR:?}/.zshrc"
 EOF
