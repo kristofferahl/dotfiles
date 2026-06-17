@@ -67,3 +67,21 @@ function zel() {
     zellij -n "$HOME/develop/github/dotfiles/.config/zellij/layouts/${session_name:?}.kdl" -s "${session_name:?}"
   fi
 }
+
+# secrets
+function secrets() {
+  # Use "gopass edit --create <path>" to set secrets
+  export DATADOG_API_KEY=$(gopass show -o secrets/datadoghq.eu/api_key)
+  export DATADOG_APP_KEY=$(gopass show -o secrets/datadoghq.eu/app_key)
+  export TAILSCALE_OAUTH_CLIENT_ID=$(gopass show -o secrets/tailscale.com/oauth_client_id)
+  export TAILSCALE_OAUTH_CLIENT_SECRET=$(gopass show -o secrets/tailscale.com/oauth_client_secret)
+  export OKTA_API_TOKEN=$(gopass show -o secrets/okta.com/api_token)
+  export OPENAI_API_KEY=$(gopass show -o secrets/openai.com/api_key)
+  export JIRA_API_TOKEN=$(gopass show -o secrets/atlassian.com/jira/api_token)
+  export LETTA_API_KEY=$(gopass show -o secrets/letta.com/api_key)
+}
+
+function ssh-restart() {
+  killall ssh-agent
+  eval "$(ssh-agent)"
+}

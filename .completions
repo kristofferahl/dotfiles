@@ -7,7 +7,7 @@
 # brew completions
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-# Zsh
+# zsh
 autoload -Uz compinit && compinit
 
 # fzf
