@@ -10,6 +10,7 @@ brew install coreutils
 brew install cryptography
 brew install direnv
 brew install eza
+brew install fastfetch
 brew install font-roboto-mono-nerd-font
 brew install fd
 brew install fzf
@@ -17,7 +18,10 @@ brew install ghostty
 brew install gettext
 brew install git
 brew install git-gui
+brew install gum
 brew install jq
+brew install kubectx
+brew install kubernetes-cli
 brew install pinentry
 brew install pinentry-mac
 brew install starship
@@ -33,7 +37,6 @@ brew install btop
 brew install charmbracelet/tap/freeze
 brew install deno
 brew install docker-credential-helper-ecr
-brew install fastfetch
 brew install gh
 brew install glow
 brew install go
@@ -41,7 +44,6 @@ brew install go-bindata
 brew install golangci-lint
 brew install goreleaser
 brew install gopass
-brew install gum
 brew install helm
 brew install hey
 brew install jira-cli
@@ -51,8 +53,6 @@ brew install ko
 brew install krew
 brew install kube-score
 brew install kubebuilder
-brew install kubectx
-brew install kubernetes-cli
 brew install kustomize
 brew install neovim
 brew install operator-sdk
