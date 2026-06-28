@@ -22,6 +22,7 @@
 	trustExitCode = true
 [gpg]
 	program = /opt/homebrew/bin/gpg
+	format = ssh
 [commit]
 	gpgsign = true
 [tag]
