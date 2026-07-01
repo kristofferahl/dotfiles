@@ -3,6 +3,7 @@
 # paths
 PATH="/opt/homebrew/bin:$PATH"
 PATH="${PATH}:${HOME}/.krew/bin"
+PATH="${HOME}/.local/bin:$PATH"
 
 # go paths
 export GOPATH="$HOME/develop/go"
