@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
+if setopt &>/dev/null; then
 # auto cd
 setopt AUTO_CD
+fi

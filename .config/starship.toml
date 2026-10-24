@@ -99,7 +99,8 @@ disabled = true
 [time]
 disabled = false
 format = ' 🕙 $time($style) '
-time_format = 'W%U, %a %T'
+time_format = 'W%W, %a %T'
+utc_time_offset = 'Europe/Stockholm'
 
 [[battery.display]]
 threshold = 20
