@@ -16,6 +16,9 @@ export STARSHIP_CONFIG="${DOTFILES_DIR:?}/.config/starship.toml"
 # zellij
 export ZELLIJ_CONFIG_DIR="${DOTFILES_DIR:?}/.config/zellij"
 
+# herdr
+export HERDR_CONFIG_PATH="${DOTFILES_DIR:?}/.config/herdr/config.toml"
+
 # fd
 export FD_OPTIONS='--exclude .git/'
 

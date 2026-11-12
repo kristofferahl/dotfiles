@@ -1,0 +1,12 @@
+onboarding = false
+
+[theme]
+name = "tokyo-night"
+
+[[keys.command]]
+key = "prefix+m"
+type = "popup"
+command = "mavis --ai"
+description = "run mavis"
+width = "80%"
+height = "60%"
