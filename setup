@@ -69,6 +69,7 @@ brew install tfsec
 brew install vhs
 brew install viddy
 brew install worktrunk
+brew install yazi
 brew install yq
 brew install johanhaleby/kubetail/kubetail
 brew install ynqa/tap/jnv
