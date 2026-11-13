@@ -1,0 +1,8 @@
+# Usually goes in ~/Library/Application Support/mavis/config.yaml
+include:
+  - path: ~/develop/github/kristofferahl/dotfiles/.config/mavis.yaml
+  # Replace with the actual company directory and config path for this machine.
+  - when: "path:~/develop/company/"
+    path: ~/develop/github/dotfiles/.config/mavis.company.yaml
+  - when: "path:~/develop/github/kristofferahl/mavis/"
+    path: ~/develop/github/kristofferahl/mavis/mavis.yaml
