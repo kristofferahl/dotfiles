@@ -14,7 +14,8 @@ if [[ -d ${DOTFILES_DIR:?}/addons/ ]]; then
   done
 fi
 
-eval "$(starship init zsh)"
 eval "$(direnv hook zsh)"
+eval "$(dirkube hook zsh)"
+eval "$(starship init zsh)"
 
 source ${DOTFILES_DIR:?}/.splash
