@@ -12,7 +12,13 @@ gum style --margin="0 0 1 0" --padding="0 4" 'viddy -n 2 kubectl get pods'
 
 gum style --margin="0 0" --padding="0 2" --bold 'digging'
 gum style --margin="0 0 1 0" --padding="0 4" 'dig +short google.com' \
-          'dig +trace google.com' \
-          'dig @1.1.1.1 google.com' \
-          'dig +tcp google.com'
+  'dig +trace google.com' \
+  'dig @1.1.1.1 google.com' \
+  'dig +tcp google.com'
 
+gum style --margin="0 0" --padding="0 2" --bold 'rex'
+gum style --margin="0 0 1 0" --padding="0 4" 'Go to Directory: shift+cmd+g' \
+  'Copy Mode: shift+cmd+c' \
+  'Insert Path: ctrl+cmd+i' \
+  'Scroll in Claude Code: fn+up / fn+down' \
+  'Start dev session: shift+cmd+o'
